@@ -11,6 +11,7 @@ docker-gource
 >     -v REPO_ROOT:/repoRoot \  
 >     -v RESULTS_FOLDER:/results \  
 >     -v AVATARS_FOLDER:/avatars \  
+>     --env TITLE="My overridden title text" \  
 >     taivokasper/gource
 
 If you want repository usernames to be replaced with images then put images to avatars folder.  
