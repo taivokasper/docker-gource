@@ -3,7 +3,7 @@ set -e # stop on first error
 
 rm -f /results/{gource.ppm,gource.mp4}
 
-screen -dmS recording xvfb-run -a -s "-screen 0 1280x720x24" gource -1280x720 -r 30 --user-image-dir /avatars/ --highlight-all-users -s 0.5 -o /results/gource.ppm
+screen -dmS recording xvfb-run -a -s "-screen 0 1280x720x24" gource -1280x720 -r 30 --title "$TITLE" --user-image-dir /avatars/ --highlight-all-users -s 0.5 -o /results/gource.ppm
 
 # This hack is needed because gource process doesn't stop
 sleep 3

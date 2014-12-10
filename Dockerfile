@@ -6,6 +6,8 @@ apt-get install -y git mercurial xvfb xfonts-base xfonts-75dpi xfonts-100dpi xfo
 
 ADD ./gource_generator.bash /tmp/gource_generator.bash
 
+ENV TITLE "Example title"
+
 VOLUME ["/repoRoot", "/avatars", "/results"]
 
 WORKDIR /repoRoot
