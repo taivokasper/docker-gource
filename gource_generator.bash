@@ -6,13 +6,13 @@ rm -f /results/{gource.ppm,gource.mp4}
 screen -dmS recording xvfb-run -a -s "-screen 0 1280x720x24" gource -1280x720 -r 30 --title "$TITLE" --user-image-dir /avatars/ --highlight-all-users -s 0.5 -o /results/gource.ppm
 
 # This hack is needed because gource process doesn't stop
-sleep 3
+sleep 5
 filesize=$(stat -c '%s' /results/gource.ppm)
 while [[ "$filesize" -eq "0" || $filesize -lt $(stat -c '%s' /results/gource.ppm) ]] ;
 do
-	sleep 10
+	sleep 20
+	filesize=$(stat -c '%s' /results/gource.ppm)
     echo 'Polling the size. Current size is' $filesize
-    filesize=$(stat -c '%s' /results/gource.ppm)
 done
 echo 'Force stopping recording because file size is not growing'
 screen -S recording -X quit
