@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:14.04
 
 RUN apt-get update -y && apt-get install -y software-properties-common
 RUN add-apt-repository -y ppa:kirillshkrogalev/ffmpeg-next
@@ -13,4 +13,3 @@ VOLUME ["/repoRoot", "/avatars", "/results"]
 WORKDIR /repoRoot
 
 CMD bash /tmp/gource_generator.bash
-
